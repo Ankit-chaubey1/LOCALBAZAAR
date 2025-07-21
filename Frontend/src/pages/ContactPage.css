@@ -1,0 +1,39 @@
+.contact-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-page h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-item {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #00aaff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.contact-item h2 {
+  margin: 0 0 10px;
+  color: #0077cc;
+}
+
+.contact-item p {
+  margin: 5px 0;
+  color: #444;
+  line-height: 1.5;
+}

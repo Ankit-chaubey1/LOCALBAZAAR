@@ -1,0 +1,299 @@
+.location-picker {
+  margin: 1rem 0;
+  z-index: 10;
+}
+
+.location-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.location-picker-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.input-method-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.toggle-btn {
+  background-color: #050708;
+  color: #333;
+  border: 2px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #e9ecef;
+}
+
+.toggle-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.map-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* .current-location-btn {
+  background-color: #0465a5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+} */
+
+#current-location-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+#current-location-btn:hover:not(:disabled) {
+  background-color: #1e6b30;
+}
+
+.current-location-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.manual-input-form {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #dee2e6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row.full-width,
+.form-row input.full-width {
+  grid-column: 1 / -1;
+}
+
+.manual-input-form input,
+.manual-input-form select {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.manual-input-form input:focus,
+.manual-input-form select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.manual-instruction {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+}
+
+.map-wrapper {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.map-container {
+  position: relative;
+  background-color: #f8f9fa;
+  min-height: 300px;
+}
+
+.map-container[style*="display: block"] {
+  display: block !important;
+}
+
+/* Ensure Leaflet map takes full container size */
+.map-container .leaflet-container {
+  height: 300px !important;
+  width: 100% !important;
+  z-index: 1;
+}
+
+.map-container .leaflet-control-container {
+  pointer-events: auto;
+}
+
+/* Fix for map tiles not loading */
+.map-container .leaflet-tile-pane {
+  opacity: 1;
+}
+
+.map-container .leaflet-tile {
+  opacity: 1 !important;
+}
+
+.map-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.map-loading p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.selected-location {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid #007bff;
+  margin-bottom: 1rem;
+}
+
+.selected-location p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.address-text {
+  color: #333;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.location-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.5rem 0 !important;
+}
+
+.location-details span {
+  background-color: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #495057;
+}
+
+.coordinates-text {
+  color: #666;
+  font-size: 0.8rem !important;
+  font-family: monospace;
+}
+
+.map-instruction {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Leaflet specific fixes */
+.map-container .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.map-container .leaflet-control-container {
+  pointer-events: auto;
+}
+
+/* Ensure map is visible when active */
+.input-method-toggle .toggle-btn.active {
+  /* background-color: #007bff; */
+  color: white;
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .location-picker-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .input-method-toggle {
+    justify-content: center;
+  }
+
+  .toggle-btn {
+    flex: 1;
+  }
+
+  .current-location-btn {
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    height: 250px !important;
+  }
+}
