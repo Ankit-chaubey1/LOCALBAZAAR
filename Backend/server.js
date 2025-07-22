@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://buy-sell-tau.vercel.app"], // Adjust this to your frontend URL
+    origin: ["http://localhost:5173", "https://localbazar-frontend.netlify.app/"], // Adjust this to your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
