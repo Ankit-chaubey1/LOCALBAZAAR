@@ -26,8 +26,6 @@ const Home = () => {
       setLoading(true)
       const res = await API.get("/products")
       setProducts(res.data)
-      console.log(res.data);
-      console.log(typeof(res.data))
       setFilteredProducts(res.data)
     } catch (err) {
       console.error("Failed to load products", err)
@@ -149,13 +147,13 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-header">
-        <h2>{showNearby ? "Nearby Products" : "Recent Products"}</h2>
+        <h2>{showNearby ? "Nearby Products" : "Fresh Recommendations"}</h2>
 
         <div className="search-container">
           <div className="search-wrapper">
             <input
               type="text"
-              placeholder="Search products... laptop,bike,books etc..."
+              placeholder="Search products..."
               value={searchQuery}
               onChange={handleSearchInputChange}
               className="search-input"
@@ -221,14 +219,9 @@ const Home = () => {
         <div className="loading">Loading products...</div>
       ) : filteredProducts.length > 0 ? (
         <div className="product-grid">
-          {/* {filteredProducts.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard key={product._id} product={product} showDistance={showNearby} />
-          ))} */}
-          {Array.isArray(filteredProducts) &&
-  filteredProducts.map((product) => (
-    <ProductCard key={product._id} product={product} showDistance={showNearby} />
-))}
-
+          ))}
         </div>
       ) : (
         <p className="no-products">
@@ -244,5 +237,3 @@ const Home = () => {
 }
 
 export default Home
-
-
