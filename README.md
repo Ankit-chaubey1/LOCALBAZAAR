@@ -9,7 +9,7 @@
 ## 🔧 Technologies Used
 
 - **Frontend**: React.js, Axios, React Router DOM, CSS
-- **Backend**: Node.js, Express.js
+- **Backend**: Node.js, Express.js   
 - **Database**: MongoDB with Mongoose (Dynamic Schema)
 - **Authentication**: JWT (JSON Web Token)
 - **Storage**: localStorage (for session and token handling)
