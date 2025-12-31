@@ -94,6 +94,8 @@ https://localbazaar-rbz8.vercel.app/
 
 future enhancements:
 ai based chatbot;
+payment integration feature;
+
 
 
 
